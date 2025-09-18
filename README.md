@@ -6,3 +6,4 @@ Estudo de internet da coisas com C++ e Arduino.
 
 * [AULA 02 - Semaforo](https://github.com/Leandro-Cardoso/Univassouras-IOT/tree/main/aula02)
 * [AULA 03 - Semaforo](https://github.com/Leandro-Cardoso/Univassouras-IOT/tree/main/aula03)
+* [AULA 04 - Botão com LED e Buzzer](https://github.com/Leandro-Cardoso/Univassouras-IOT/tree/main/aula04)

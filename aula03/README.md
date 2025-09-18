@@ -46,7 +46,7 @@ void loop() {
       </code></pre>
     </td>
     <td width="50%">
-      <img src="arduino.png" alt="Descrição da Imagem">
+      <img src="arduino.png" alt="Arduino">
     </td>
   </tr>
 </table>
