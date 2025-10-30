@@ -11,4 +11,6 @@ Estudo de internet da coisas com C++ e Arduino.
 
 <br>
 
-[**TRABALHO** - Estação Meteorologica](https://github.com/Leandro-Cardoso/Univassouras-IOT/tree/main/trabalho)
+[**TRABALHO 01** - Estação Meteorologica](https://github.com/Leandro-Cardoso/Univassouras-IOT/tree/main/trabalho)
+
+[**TRABALHO 02** - Estação Meteorologica com Banco de Dados e Interface de Usuário](https://github.com/Leandro-Cardoso/Univassouras-IOT/tree/main/trabalho02)
