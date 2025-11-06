@@ -1,7 +1,6 @@
 from django.core.management.base import BaseCommand
 from estacao.models import Data
 import serial
-import time
 
 class Command(BaseCommand):
     help = 'Lê dados do Arduino pela porta serial e salva no banco de dados.'
@@ -19,17 +18,10 @@ class Command(BaseCommand):
             default=9600,
             help='Taxa de transmissão (baudrate) da comunicação serial.'
         )
-        parser.add_argument(
-            '--interval',
-            type=float,
-            default=5.0,
-            help='Intervalo em segundos entre cada leitura.'
-        )
 
     def handle(self, *args, **options):
         port = options['port']
         baudrate = options['baudrate']
-        interval = options['interval']
 
         self.stdout.write(self.style.SUCCESS(f'Conectando à porta {port} ({baudrate} bps)...'))
 
@@ -43,7 +35,6 @@ class Command(BaseCommand):
         try:
             while True:
                 line = arduino.readline().decode().strip()
-                print(line, "<- AQUI") # TODO: REMOVER
 
                 if line:
                     try:
@@ -57,8 +48,6 @@ class Command(BaseCommand):
                         self.stdout.write(self.style.SUCCESS(f"Salvo: {temperature}°C | {humidity}%"))
                     except ValueError:
                         self.stdout.write(self.style.WARNING(f"Formato inválido: '{line}'"))
-
-                time.sleep(interval)
 
         except KeyboardInterrupt:
             self.stdout.write(self.style.NOTICE("Leitura interrompida pelo usuário."))
