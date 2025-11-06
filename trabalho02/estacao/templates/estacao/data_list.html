@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estação Meteorologica</title>
+
+    <link rel="stylesheet" href="{% static 'estacao/app.css' %}">
+</head>
+<body>
+    
+    <h1>Estação Meteorologica</h1>
+
+    <h2>Dados:</h2>
+
+    <ul>
+        {% for data in estacao %}
+
+        <li>
+            {{ data }}
+        </li>
+
+        {% empty %}
+
+        <li>Nenhuma dado armazenado...</li>
+
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
