@@ -13,6 +13,40 @@
     
     <h1>Estação Meteorologica</h1>
 
+    <h2>Filtro:</h2>
+
+    <form method="GET" action="{% url 'data_list' %}">  
+        <label for="start_date">Data Inicial:</label>
+
+        <input 
+            type="date" 
+            id="start_date" 
+            name="start_date" 
+            value="{{ start_date }}" 
+            title="Selecione a data inicial do período."
+        >
+        
+        <label for="end_date">Data Final:</label>
+
+        <input 
+            type="date" 
+            id="end_date" 
+            name="end_date" 
+            value="{{ end_date }}"
+            title="Selecione a data final do período."
+        >
+        
+        <button type="submit">
+            Filtrar Dados
+        </button>
+        
+        {% if start_date or end_date %}
+
+            <a href="{% url 'data_list' %}">Limpar Filtro</a>
+
+        {% endif %}
+    </form>
+
     <h2>Dados:</h2>
 
     <ul>
